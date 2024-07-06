@@ -33,7 +33,7 @@ interface Product {
 }
 
 // 2
-function displayProduct({ id, name, price, category }: Product) {
+function displayProduct({ id, name, price, category }: Product): void {
   console.log(`ID: ${id}`);
   console.log(`Name: ${name}`);
   console.log(`Price: ${price}`);
