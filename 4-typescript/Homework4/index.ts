@@ -57,7 +57,7 @@ interface Cat {
 }
 
 // 3)
-function makeSound(animal: Dog | Cat) {
+function makeSound(animal: Dog | Cat): void {
   if ("bark" in animal) {
     console.log(animal.bark());
   } else if ("meow" in animal) {
@@ -68,14 +68,16 @@ function makeSound(animal: Dog | Cat) {
 // 4)
 function isDog(animal: any): animal is Dog {
   return "bark" in animal;
+  // return (animal as Dog).bark !== undefined;
 }
 
 function isCat(animal: any): animal is Cat {
   return "meow" in animal;
+  // return (animal as Cat).meow !== undefined;
 }
 
 // 5)
-function playWithPet(pet: Dog | Cat) {
+function playWithPet(pet: Dog | Cat): void {
   if (isDog(pet)) {
     console.log(pet.bark());
   } else if (isCat(pet)) {
